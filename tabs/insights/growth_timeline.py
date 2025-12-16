@@ -65,18 +65,18 @@ def render_growth_timeline(insights):
         font-size: 13px;
         opacity: 0.95;
     }
-    /* Progressive gradient: Light blue → Medium blue → Vibrant blue */
+    /* Progressive gradient: Very light blue → Light blue → Medium light blue (matching KPI cards) */
     .stat-card-1 { 
-        background: linear-gradient(135deg, #E8F4F8 0%, #B3D9EC 100%);
+        background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
         color: #2c3e50;
     }
     .stat-card-2 { 
-        background: linear-gradient(135deg, #7EC8E3 0%, #3FA9D8 100%);
-        color: white;
+        background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+        color: #2c3e50;
     }
     .stat-card-3 { 
-        background: linear-gradient(135deg, #2E86DE 0%, #1B6DC1 100%);
-        color: white;
+        background: linear-gradient(135deg, #BFDBFE 0%, #93C5FD 100%);
+        color: #2c3e50;
     }
     </style>
 """, unsafe_allow_html=True)

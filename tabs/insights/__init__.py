@@ -16,7 +16,7 @@ def render_insights_tab(df, stats):
         info_card("Insights", "Analyze your content with practical, actionable insights")
         return
     
-    from insights import YouTubeInsights
+    from platforms.youtube.insights import YouTubeInsights
     insights = YouTubeInsights(df, stats)
     
     # Header

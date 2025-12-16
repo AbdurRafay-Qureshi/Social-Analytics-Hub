@@ -52,7 +52,12 @@ def render_video_length_impact(insights):
         fig = go.Figure()
         
         for idx, (duration, row) in enumerate(length_stats.iterrows()):
-            normalized = idx / (len(length_stats) - 1)
+            # Safe normalization to prevent division by zero
+            # If there's only one duration bin, use 0.5 as normalized value
+            if len(length_stats) <= 1:
+                normalized = 0.5
+            else:
+                normalized = idx / (len(length_stats) - 1)
             
             r = int(173 + (6 - 173) * normalized)
             g = int(216 + (95 - 216) * normalized)

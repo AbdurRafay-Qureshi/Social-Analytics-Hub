@@ -17,12 +17,45 @@ def render_performance_matrix(insights):
                 margin-bottom: 20px;
             }
             .stat-card {
-                background: linear-gradient(135deg, #ADD8E6 0%, #065FD4 100%);
                 border-radius: 12px;
                 padding: 20px;
                 text-align: center;
-                color: white;
                 box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                position: relative;
+                cursor: help;
+            }
+            .stat-card:hover .tooltip {
+                visibility: visible;
+                opacity: 1;
+            }
+            .tooltip {
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                bottom: 110%;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(0, 0, 0, 0.9);
+                color: #fff;
+                text-align: center;
+                padding: 10px 15px;
+                border-radius: 8px;
+                width: 220px;
+                font-size: 11px;
+                line-height: 1.4;
+                z-index: 1000;
+                transition: opacity 0.3s;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            }
+            .tooltip::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: rgba(0, 0, 0, 0.9) transparent transparent transparent;
             }
             .stat-value {
                 font-size: 28px;
@@ -32,6 +65,19 @@ def render_performance_matrix(insights):
             .stat-label {
                 font-size: 13px;
                 opacity: 0.95;
+            }
+            /* Progressive gradient: Very light blue → Light blue → Medium light blue (matching KPI cards) */
+            .stat-card-1 { 
+                background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+                color: #2c3e50;
+            }
+            .stat-card-2 { 
+                background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+                color: #2c3e50;
+            }
+            .stat-card-3 { 
+                background: linear-gradient(135deg, #BFDBFE 0%, #93C5FD 100%);
+                color: #2c3e50;
             }
             </style>
         """, unsafe_allow_html=True)

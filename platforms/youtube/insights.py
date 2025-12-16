@@ -1,4 +1,4 @@
-# insights.py
+# platforms/youtube/insights.py
 # User-friendly analytics charts for content creators
 
 import plotly.graph_objects as go
@@ -22,7 +22,7 @@ class YouTubeInsights:
         
         fig = go.Figure()
         
-        # Cumulative views
+        #Cumulative views
         fig.add_trace(go.Scatter(
             x=df_sorted['upload_date'],
             y=df_sorted['cumulative_views'],
